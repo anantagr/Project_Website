@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header id="main-header">
+		<div class="container">
+			<h1>Travel Experts</h1>
+		</div>
+	</header>
+
+	<nav id="navbar">
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/packages" target="_blank">Packages</a></li>
+				<li><a href="register.html"target="_blank">Registration</a></li>
+				<li><a href="contactus.html"target="_blank">Contact us</a></li>
+				<li><a href="about.html"target="_blank">About</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<section id="main2">
+			<h1>Contact us</h1>
+			
+			<form method="post" action="/post_form">
+			
+				<label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br><br>
+			
+				<label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+			
+				<label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" value=""><br><br>
+			
+				<label for="contactnumber">Contact Number:</label><br>
+        <input type="text" id="contactnumber" name="contactnumber" value=""><br><br>								
+        <input type="submit" value="Submit">
+			
+			</form>
+		</section>
+	</div>
+
+	<footer id="main-footer">
+		<p>Copyright &copy; 2017 Travel Expert</p>
+	</footer>
+</body>
+</html>

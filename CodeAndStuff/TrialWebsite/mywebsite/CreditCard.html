@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Page</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+			p, li {
+				background-color: red;
+				color: orange;
+				font-size: 5vw;
+				font-family: McLaren;
+			}
+			.even {
+				background-color: blue;
+			}
+			ol {
+				background-image: url("media/bckgrnd1.jpg");
+			}
+			li {
+				background-color: green;
+			}
+			#myform {
+				border-top-style: dashed;
+				border-bottom-style: dotted;
+				border-left-style: groove;
+				border-right-style: ridge;
+				border-width: 20mm;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="even">paragraph 1</p>
+		<p>paragraph 2</p>
+		<p class="even">paragraph 3</p>
+		<p style="background-color: #123456; color: yellow">paragraph 4</p>
+		<p class="even">paragraph 5</p>
+		<p>paragraph 6</p>
+		<ol>
+			<li class="even">item 1</li>
+			<li>item 2</li>
+			<li class="even">item 3</li>
+			<li>item 4</li>
+		</ol>
+		
+		<form id="myform" method="get" action="bouncer.php">
+			Color: <input type="color" name="colour" value="#00ff00" /><br />
+			First Name: <input type="text" placeholder="FirstName" name="fname" /><br />
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" /><br />
+			<label for="terms">Agree to Terms</label>
+			<input type="checkbox" name="terms" id="terms" value="y" required="required" checked="checked" /><br />
+			<label for="visa">Visa</label>
+			<input type="radio" name="cardtype" id="visa" value="v" required="required" checked="checked" /><br />			
+			<label for="mcard">Mastercard</label>
+			<input type="radio" name="cardtype" id="mcard" value="m" required="required" /><br />			
+			<label for="amex">American Express</label>
+			<input type="radio" name="cardtype" id="amex" value="a" required="required" /><br />			
+			<label for="bdate">Birthdate:</label>
+			<input type="date" name="bdate" id="bdate" required="required" /><br />	
+			<label for="story">Your Life Story:</label>
+			<textarea name="story" rows="5" cols="20">I arrived from my home planet on Jan 1, 1970</textarea>
+			<label for="vacation">Favorite Vacation Destination</label>
+			<select name="vacation" id="vacation" multiple="multiple">
+				<option value="CN">Cancun</option>
+				<option value="BF">Banff</option>
+				<option value="MJ">Moose Jaw</option>
+				<option value="RD">Red Deer</option>
+			</select>
+			<input type="submit" value="Register" />
+			<input type="reset" value="Reset" />
+		</form>
+	</body>
+</html>

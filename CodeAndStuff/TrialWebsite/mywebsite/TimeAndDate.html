@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript 1</title>
+		<script>
+			var myToday = new Date();
+		</script>
+	</head>
+	<body>
+	
+		<script>
+			myToday.setFullYear(1969);
+			myToday.setMonth(11);
+			myToday.setDate(31);
+			myToday.setHours(0);
+
+			document.write(myToday.toTimeString() + "<br />");
+			document.write(myToday.getYear() + "<br />");
+			document.write(myToday.getFullYear() + "<br />");
+			document.write(myToday.getMonth() + "<br />");
+			document.write(myToday.getDate() + "<br />");
+			document.write(myToday.getDay() + "<br />");
+			document.write(myToday.getTime() + "<br />");
+			document.write(myToday.getHours() + "<br />");
+			document.write(myToday.getMinutes() + "<br />");
+			document.write(myToday.getSeconds() + "<br />");
+			document.write(myToday.getMilliseconds() + "<br />");
+		</script>
+	</body>
+</html>
