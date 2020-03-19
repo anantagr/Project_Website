@@ -1,9 +1,9 @@
 # Project_Website
 Design and construct a prototype web-site for the Travel Experts travel agency
 
-# Front End 
+# Frontend Developement 
     HTML/JavaScript/CSS 
-# Back End 
+# Backend Server 
     JavaScript / Node JS
 # Database 
     MySQL
