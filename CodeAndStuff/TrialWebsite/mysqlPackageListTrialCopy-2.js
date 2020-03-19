@@ -36,7 +36,7 @@ app.get("/packages", (myrequest, myresponse)=>{
               var value = Object.values(packages) //Making an array 'value' to store 'package' data
               for (i=0; i < value.length; i++)
                 {
-                  //console.log(value[i]) //passing data in each row to table
+                  console.log(value[i]) //passing data in each row to table
                 }
             }
 

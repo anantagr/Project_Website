@@ -3,16 +3,12 @@ var bodyParser = require('body-parser');
 var app     = express();
 var path=require('path');
 
-var packages = require('./mysqlPackageListTrialCopy-1')
-var contacts = require('./mywebsite/test')
+var packages = require('./mysqlPackageList')
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 
-app.use(express.static(path.join(__dirname, '../')));
-//app.post('/myaction.html', function(req, res) {
-//  res.send('You sent the name "' + req.body.name + '".');
-//});
+app.use(express.static(path.join(__dirname, '/')));
 
 app.get("/packages", packages);
 

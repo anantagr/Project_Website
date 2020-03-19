@@ -1,0 +1,83 @@
+<!-- This page is customer registration-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header id="main-header">
+		<div class="container">
+			<h1>Travel Experts</h1>
+		</div>
+	</header>
+
+	<nav id="navbar">
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="http://127.0.0.1:8000/packages" target="_blank">Packages</a></li>
+				<li><a href="register.html"target="_blank">Registration</a></li>
+				<li><a href="contactus.html"target="_blank">Contact us</a></li>
+				<li><a href="about.html"target="_blank">About</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<section id="main2">
+			<h1>Contact us</h1>
+			
+			<form method="post" action="/post_form">
+			
+				<label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" value=""><br>
+			
+				<label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+			
+				<label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value=""><br>
+			
+        <label for="cusHP">Home Number:</label>
+        <input type="text" id="cusHP" name="cusHP" value=""><br>
+			
+        <label for="cusBP">Business Number:</label>
+        <input type="text" id="cusBP" name="cusBP" value=""><br><br>
+
+        <label for="cusID">Login ID:</label>
+        <input type="text" id="cusID" name="cusID" value=""><br>
+        			
+				<label for="password">Password:</label>
+        <input type="text" id="password" name="password" value=""><br><br>
+        
+        <label for="cusAdd">Address:</label>
+        <input type="text" id="cusAdd" name="cusAdd" value=""><br>
+
+        <label for="cusCity">City:</label>
+        <input type="text" id="cusCity" name="cusCity" value=""><br>
+
+        <label for="cusProv">Province:</label>
+        <input type="text" id="cusProv" name="cusProv" value=""><br>
+
+        <label for="cusPostal">Postal:</label>
+        <input type="text" id="cusPostal" name="cusPostal" value=""><br>
+
+        <label for="cusCountry">Country:</label>
+        <input type="text" id="cusCountry" name="cusCountry" value=""><br><br>
+
+
+        <input type="submit" value="Submit">
+      
+        <input type="reset" value="Clear" onclick="return confirm('Continue the Reset?');" />
+
+			</form>
+		</section>
+	</div>
+
+	<footer id="main-footer">
+		<p>Copyright &copy; 2017 Travel Expert</p>
+	</footer>
+</body>
+</html>

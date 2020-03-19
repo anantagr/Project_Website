@@ -3,10 +3,7 @@
 const mysql = require("mysql");
 const express = require("express")
 const fs = require("fs");
-//const app = express();
-//app.listen(5500);
-
-//app.get("/packages", 
+ 
 module.exports = (myrequest, myresponse)=>{ 
 
   const conn = mysql.createConnection({     
