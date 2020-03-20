@@ -3,7 +3,7 @@
 const mysql = require("mysql");
 const express = require("express")
 const fs = require("fs");
- 
+
 module.exports = (myrequest, myresponse)=>{ 
 
   const conn = mysql.createConnection({     
@@ -16,14 +16,18 @@ module.exports = (myrequest, myresponse)=>{
   conn.connect((err)=>{
     if (err) throw err;
     console.log("Connected to Travel Expert Database");
-    var sql_string = "SELECT * FROM packages";
-    console.log("Packages table selected");
 
-    conn.query(sql_string, (err, result, fields)=>{ // Storing table data in results and table heading in fields
+    var sql_string1 = "SELECT * FROM agencies";
+    var sql_string2 = "SELECT * FROM agents";
+
+    
+    console.log("Agencies table selected");
+
+    conn.query(sql_string1, (err, result, fields)=>{ // Storing table data in results and table heading in fields
         if(err) throw err;
         myresponse.writeHead(200, {"Content-type":"text/HTML"});
 
-        fs.readFile("../mysqlPackageList_header.html", (err, data)=>{
+        fs.readFile("mysqlAgencyList_header.html", (err, data)=>{
           if (err) throw err;
           myresponse.write(data); //display the data  written in html file
 
@@ -56,13 +60,45 @@ module.exports = (myrequest, myresponse)=>{
           
           //Ending Table
           myresponse.write("</table>");
+          
 
+
+    conn.query(sql_string2, (err, result, fields)=>{ 
+      if(err) throw err;
+
+      fs.readFile("mysqlAgentList_header.html", (err, data)=>{
+        if (err) throw err;
+        myresponse.write(data);
+
+        myresponse.write("<table border='1'>");
+
+        myresponse.write("<tr>"); 
+
+        for (column of fields)
+          {
+            myresponse.write("<th>" + column.name + "</th>")
+          }
+          
+          for(packages of result)
+            {
+              myresponse.write("<tr>")
+              var value = Object.values(packages)
+              for (i=0; i < value.length; i++)
+                {
+                  myresponse.write("<td>" + value[i] + "</td>")
+                }
+
+              myresponse.write("</tr>");
+            }
         
-          fs.readFile("../mysqlPackageList_footer.html", (err, data)=>{
+        myresponse.write("</table>");          
+        
+        fs.readFile("mysqlPackageList_footer.html", (err, data)=>{
           if (err) throw err;
-          myresponse.write(data); //display the data  written in html file
-          myresponse.end(); //Stopping the http server
+          myresponse.write(data);
+          myresponse.end();
           });
+
         });
       });
     
@@ -70,5 +106,6 @@ module.exports = (myrequest, myresponse)=>{
       if (err) throw err;
     });
   }); 
+  });
+});
 }
-//);

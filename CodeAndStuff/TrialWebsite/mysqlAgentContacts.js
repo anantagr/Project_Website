@@ -3,7 +3,7 @@
 const mysql = require("mysql");
 const express = require("express")
 const fs = require("fs");
- 
+
 module.exports = (myrequest, myresponse)=>{ 
 
   const conn = mysql.createConnection({     
@@ -16,14 +16,16 @@ module.exports = (myrequest, myresponse)=>{
   conn.connect((err)=>{
     if (err) throw err;
     console.log("Connected to Travel Expert Database");
-    var sql_string = "SELECT * FROM packages";
-    console.log("Packages table selected");
+
+    var sql_string = "SELECT * FROM agents";
+    
+    console.log("Agent table selected");
 
     conn.query(sql_string, (err, result, fields)=>{ // Storing table data in results and table heading in fields
         if(err) throw err;
         myresponse.writeHead(200, {"Content-type":"text/HTML"});
 
-        fs.readFile("../mysqlPackageList_header.html", (err, data)=>{
+        fs.readFile("mysqlAgentList_header.html", (err, data)=>{
           if (err) throw err;
           myresponse.write(data); //display the data  written in html file
 
@@ -58,7 +60,7 @@ module.exports = (myrequest, myresponse)=>{
           myresponse.write("</table>");
 
         
-          fs.readFile("../mysqlPackageList_footer.html", (err, data)=>{
+          fs.readFile("mysqlPackageList_footer.html", (err, data)=>{
           if (err) throw err;
           myresponse.write(data); //display the data  written in html file
           myresponse.end(); //Stopping the http server
