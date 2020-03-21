@@ -16,8 +16,7 @@ module.exports = (myrequest, myresponse)=>{
   conn.connect((err)=>{
     if (err) throw err;
     console.log("Connected to Travel Expert Database");
-    //var sql_string1 = "SELECT * FROM packages";
-    var sql_string = "SELECT * FROM packages WHERE PkgStartDate	< CURRENT_TIMESTAMP AND PkgEndDate	>= CURRENT_TIMESTAMP";
+    var sql_string = "SELECT * FROM packages";
     console.log("Packages table selected");
 
     conn.query(sql_string, (err, result, fields)=>{ // Storing table data in results and table heading in fields

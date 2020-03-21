@@ -24,7 +24,7 @@ module.exports = (myrequest, myresponse)=>{
         if(err) throw err;
         myresponse.writeHead(200, {"Content-type":"text/HTML"});
 
-        fs.readFile("../mysqlPackageList_header.html", (err, data)=>{
+        fs.readFile("mysqlPackageList_header.html", (err, data)=>{
           if (err) throw err;
           myresponse.write(data); //display the data  written in html file
 
@@ -59,7 +59,7 @@ module.exports = (myrequest, myresponse)=>{
           myresponse.write("</table>");
 
         
-          fs.readFile("../mysqlPackageList_footer.html", (err, data)=>{
+          fs.readFile("mysqlPackageList_footer.html", (err, data)=>{
           if (err) throw err;
           myresponse.write(data); //display the data  written in html file
           myresponse.end(); //Stopping the http server
