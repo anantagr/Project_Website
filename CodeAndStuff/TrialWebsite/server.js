@@ -18,7 +18,8 @@ app.use(express.static(path.join(__dirname, './mywebsite/')));
 
 //app.get("/packages", packages);
 //app.get("/contacts", contacts);
-app.get("/signup", signup);
+//app.get("/register", signup);
+app.post("/post_form", signup)
 
 
 app.listen(5000, function() {
