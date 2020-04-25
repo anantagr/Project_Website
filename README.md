@@ -1,5 +1,5 @@
 # Travel_Expert_Website
-Design and construct a prototype web-site for the Travel Experts travel agency
+Designed and constructed a prototype web-site for the Travel Experts travel agency
 
 # Frontend Developement 
     HTML/JavaScript/CSS 
